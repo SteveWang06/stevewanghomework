@@ -19,7 +19,6 @@ int main(){
 		}
 		i++;
 	}
-	printf("%d", arr[9]);
 	
 	if(arr[9] % 11 == 0){
 		printf("%s", "YES");
