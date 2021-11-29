@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 
-void input(int *arr, int size = 0){
+void input(int *arr, int size){
 	for(int i = 0; i <= size - 1; i++){
 		scanf("%d", &arr[i]);
 	}
