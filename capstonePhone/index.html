@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>phone shop</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="header__logo">
+                            <a href="">
+                                <img src="#" alt="" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="header__search input-group">
+                            <input oninput="searchPhone()" id="keyWord" type="text" class="form-control input-lg">
+                            
+                            <button class="btn btn-primary">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="header__contact">
+
+                            <div  class="header__card">
+                                <p onclick="renderCart()">
+                                    <img src="./img/shopping.png" alt="" class="img-fluid">
+                                    <span id="quantity">0</span>
+                                </p>
+
+
+                                <div id="showCart" class="show-cart">
+                                    <button onclick="closeCart()" class="close-cart">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                    <div id="cartHTML" class="cart"> 
+                                    </div>
+                                    <div class="bottom-cart">
+                                        <div class="cart-total">
+                                            <span>Total:</span>
+                                            <span id="totalAllItem" class="total">$ 0</span>
+                                        </div>
+    
+                                        <div class="cart-btn">
+                                            <button onclick="completedPay()" class="btn-pay">Thanh Toán</button>
+                                            <button onclick="deleteAllCart()" class="btn-delete">Xóa</button>
+    
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                
+
+                <div class="col-12">
+                    <div class="row" id="renderType">
+                        <div id="controll" class="carousel">
+                            <div class="product my-3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="product__title">
+                                            <div class="product__text">
+                                                <h5 onclick="renderProductAll()" class="active">All Phone</h5>
+                                                <h5 onclick="renderTypePhone('iphone')">Iphone</h5> 
+                                                <h5 onclick="renderTypePhone('samsung')">Samsung</h5>
+                                            </div>
+
+                                        </div>
+                                        <div class="product__item">
+                                            <div id="allItem" class="row">
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        
+        <footer class="copyright">
+            <div class="container">
+                <p>Store © 2022</p>
+                <div class="icon">
+                    <div class="round"><i class="fab fa-facebook-f"></i> </div>
+                    <div class="round"><i class="fab fa-twitter"></i> </div>
+                    <div class="round"><i class="fa fa-wifi"></i> </div>
+                    <div class="round"><i class="fab fa-google"></i> </div>
+                </div>
+            </div>
+        </footer>
+    </footer>
+    
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0/axios.min.js" integrity="sha512-26uCxGyoPL1nESYXHQ+KUmm3Maml7MEQNWU8hIt1hJaZa5KQAQ5ehBqK6eydcCOh6YAuZjV3augxu/5tY4fsgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="./js/controller/render.js"></script>
+</body>
+
+</html>
