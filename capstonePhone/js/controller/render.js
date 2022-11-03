@@ -125,7 +125,7 @@ function renderTypePhone(type, id) {
         iphoneHTML += createHTML(sp.image, sp.name, sp.price, sp.screen, sp.backCamera, sp.frontCamera, sp.desc, sp.id);
     })
 
-    console.log(id);
+    
     // render ra giao dien
     if (!id) id = 'allItem';
     getMyId(id).innerHTML = iphoneHTML;
